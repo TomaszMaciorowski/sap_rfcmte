@@ -70,10 +70,7 @@ func recordMetrics() {
                         UtilisationCpu.Set(val)
                         val = GiveSapRFC("PRD","WAW00SAP0007_PRD_00","010","0000007941","100","0000000433","0000000257")
                         MemoryEsAct.Set(val)
-                        val = GiveSapRFC("PRD","WAW00SAP0007_PRD_00","004","1437794000","100","0000005937","00000000631")
-                        oracle_psapsr3750.Set(val)
-
-						time.Sleep(60 * time.Second)
+			time.Sleep(60 * time.Second)
                 }
         }()
 }
@@ -102,11 +99,6 @@ var (
         MemoryEsAct = promauto.NewGauge(prometheus.GaugeOpts{
                 Name: "zmysap_MemoryEsAct",
                 Help: "memory %",
-        })
-
-        oracle_psapsr3750 = promauto.NewGauge(prometheus.GaugeOpts{
-                Name: "PSAPSR3750",
-                Help: "PSAPSR3750 %",
         })
 )
 
